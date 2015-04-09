@@ -54,9 +54,18 @@ function scrabble(word) {
     return total;
 }
 
+$(document).ready(function() {
 
-// switch (values) {
-//
-//     case (word === score[letter]):
-//         total+=1;
-//         break;
+    $('form#word-form').submit(function(event) {
+        var input = $('input#word-input').val();
+        var result = scrabble(input);
+
+        alert("\"" + input + "\"" + " scrabblates to " + result);
+
+        event.preventDefault();
+
+    });
+
+
+
+});
