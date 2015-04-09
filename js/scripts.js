@@ -2,10 +2,16 @@ function scrabble(word) {
 
     var values = {
         '1' : ['a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'],
-        '2' : ['d', 'g']
+        '2' : ['d', 'g'],
+        '3' : ['b', 'c', 'm', 'p'],
+        '4' : ['f', 'h', 'v', 'w', 'y'],
+        '5' : ['k'],
+        '8' : ['j', 'x'],
+        '10': ['q', 'z']
     }
 
-    var arrayWord = word.split('');
+    //control for capitalization by making lower and splitting into array...
+    var arrayWord = word.toLowerCase().split('');
 
     var total = 0;
 
@@ -25,6 +31,16 @@ function scrabble(word) {
                         total += 1;
                     } else if ((key === '2') && (arrayWord[wordLetter] === score[letter])) {
                         total += 2;
+                    } else if ((key === '3') && (arrayWord[wordLetter] === score[letter])) {
+                        total += 3;
+                    } else if ((key === '4') && (arrayWord[wordLetter] === score[letter])) {
+                        total += 4;
+                    } else if ((key === '5') && (arrayWord[wordLetter] === score[letter])) {
+                        total += 5;
+                    } else if ((key === '8') && (arrayWord[wordLetter] === score[letter])) {
+                        total += 8;
+                    } else if ((key === '10') && (arrayWord[wordLetter] === score[letter])) {
+                        total += 10;
                     } else {
                         total += 0;
                     }
